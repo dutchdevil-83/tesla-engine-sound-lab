@@ -4,3 +4,5 @@
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;transition:none!important;animation:none!important}}
 .backup-actions{display:flex;gap:7px}.import-button{position:relative;overflow:hidden}.import-button input{position:absolute;inset:0;opacity:0;width:100%;cursor:pointer}.state-track{margin-top:18px;display:flex;align-items:center;gap:10px;flex-wrap:wrap;color:#93a3b6;font:9px var(--mono)}.state-track span{padding:8px 10px;border:1px solid #354255;border-radius:5px;background:#1a2534}.state-track span:last-child{color:#eabe68;border-color:#5c492d}.state-track i{font-style:normal;color:#75a9e8}
 @media(max-width:760px){.backup-actions{width:100%}.backup-actions .button{flex:1;justify-content:center}}
+
+.bom-status{display:inline-flex;align-items:center;gap:6px;color:#9ba9ba;font-size:10px}.bom-status select{border:1px solid #354255;background:#1a2432;color:#dbe7f7;border-radius:5px;padding:5px;font-size:10px}

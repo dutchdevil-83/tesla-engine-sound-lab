@@ -1,10 +1,175 @@
 [
- {"id":"HW-001","name":"S3XY Commander","manufacturer":"Enhance Auto","model":"Exact generation/revision unknown","category":"Telemetry","purpose":"Existing vehicle telemetry ecosystem; candidate source subject to Dash coexistence verification","requiredQty":1,"ownedQty":1,"compatibility":"Requires physical test","supplier":"Enhance Auto","url":"https://www.enhauto.com/","priceEur":null,"priceVerified":"","alternatives":["Independent read-only CAN interface"],"dependencies":[],"status":"Received","notes":"Installed. Verify generation, firmware and safe third-party telemetry access."},
- {"id":"HW-002","name":"S3XY Dash","manufacturer":"Enhance Auto","model":"Exact generation unknown","category":"Telemetry","purpose":"Existing display; must remain fully functional","requiredQty":1,"ownedQty":1,"compatibility":"Requires physical test","supplier":"Enhance Auto","url":"https://www.enhauto.com/pages/dash","priceEur":null,"priceVerified":"","alternatives":[],"dependencies":["HW-001"],"status":"Installed","notes":"Installed; preserve all current functionality. Coexistence is a go/no-go."},
- {"id":"HW-003","name":"HELIX DSP","manufacturer":"Audiotec Fischer","model":"Previously identified as V TWELVE DSP MK2; physical label not confirmed","category":"Audio","purpose":"Existing DSP/amplifier, analog Tesla audio and candidate optical mixing","requiredQty":1,"ownedQty":1,"compatibility":"Requires physical test","supplier":"","url":"https://www.audiotec-fischer.de/en/helix/amplifiers/v-twelve-dsp-mk2","priceEur":null,"priceVerified":"","alternatives":[],"dependencies":[],"status":"Installed","notes":"Confirm exact model/revision/firmware, inputs, outputs, preset backup and routing."},
- {"id":"HW-004","name":"Raspberry Pi 4","manufacturer":"Raspberry Pi Ltd","model":"Exact RAM/revision unknown","category":"Compute","purpose":"Offline telemetry decode and deterministic synthesis","requiredQty":1,"ownedQty":1,"compatibility":"Partially verified","supplier":"","url":"https://www.raspberrypi.com/products/raspberry-pi-4-model-b/","priceEur":null,"priceVerified":"","alternatives":["Raspberry Pi 3B+ for lower-complexity bench comparison"],"dependencies":[],"status":"Received","notes":"Available. Identify board revision and memory; not automotive-qualified."},
- {"id":"HW-005","name":"HiFiBerry Digi2 Pro","manufacturer":"HiFiBerry","model":"Revision 2.2 candidate","category":"Audio","purpose":"Pi I2S-to-optical S/PDIF output","requiredQty":1,"ownedQty":0,"compatibility":"Requires physical test","supplier":"HiFiBerry","url":"https://www.hifiberry.com/shop/boards/digi2-pro/","priceEur":null,"priceVerified":"","alternatives":["Other Pi 40-pin I2S optical S/PDIF HAT after compatibility review"],"dependencies":["HW-004","HW-003"],"status":"Researching","notes":"Do not buy until Pi PCB revision and HELIX digital mixing are confirmed. Price not verified."},
- {"id":"HW-006","name":"HELIX DIRECTOR","manufacturer":"Audiotec Fischer","model":"Ownership/version unconfirmed","category":"Control","purpose":"Potential independent digital source volume and preset control","requiredQty":1,"ownedQty":0,"compatibility":"Requires physical test","supplier":"","url":"https://www.audiotec-fischer.de/en/knowledge-base/DIRECTOR/functions/","priceEur":null,"priceVerified":"","alternatives":["HELIX CONDUCTOR or configured DSP-side digital volume control"],"dependencies":["HW-003"],"status":"Researching","notes":"Do not assume owned. DIRECTOR digital volume does not send arbitrary commands to Pi."},
- {"id":"HW-007","name":"Automotive protected 12 V to 5 V supply","manufacturer":"TBD","model":"TBD after vehicle power verification","category":"Power","purpose":"Transient-protected Pi power and controlled shutdown","requiredQty":1,"ownedQty":0,"compatibility":"Hypothesis","supplier":"","url":"","priceEur":null,"priceVerified":"","alternatives":[],"dependencies":["HW-004"],"status":"Blocked","notes":"Highland low-voltage architecture, wake/sleep behavior, fuse and converter requirements must be verified first."},
- {"id":"HW-008","name":"MicroSD / endurance storage","manufacturer":"TBD","model":"Capacity/endurance TBD","category":"Compute","purpose":"OS and project state with corruption mitigation","requiredQty":1,"ownedQty":0,"compatibility":"Researching","supplier":"","url":"","priceEur":null,"priceVerified":"","alternatives":["Read-only root filesystem with separate bounded data partition"],"dependencies":["HW-004"],"status":"Researching","notes":"Choose after OS, logging and power-loss strategy are defined."}
+  {
+    "id": "HW-001",
+    "name": "S3XY Commander",
+    "manufacturer": "Enhance Auto",
+    "model": "Exact generation/revision unknown",
+    "category": "Telemetry",
+    "purpose": "Existing vehicle telemetry ecosystem; candidate source subject to Dash coexistence verification",
+    "requiredQty": 1,
+    "ownedQty": 1,
+    "compatibility": "Requires physical test",
+    "supplier": "Enhance Auto",
+    "url": "https://www.enhauto.com/",
+    "priceEur": null,
+    "priceVerified": "",
+    "alternatives": [
+      "Independent read-only CAN interface"
+    ],
+    "dependencies": [],
+    "status": "Installed",
+    "notes": "Installed. Verify generation, firmware and safe third-party telemetry access."
+  },
+  {
+    "id": "HW-002",
+    "name": "S3XY Dash",
+    "manufacturer": "Enhance Auto",
+    "model": "Exact generation unknown",
+    "category": "Telemetry",
+    "purpose": "Existing display; must remain fully functional",
+    "requiredQty": 1,
+    "ownedQty": 1,
+    "compatibility": "Requires physical test",
+    "supplier": "Enhance Auto",
+    "url": "https://www.enhauto.com/pages/dash",
+    "priceEur": null,
+    "priceVerified": "",
+    "alternatives": [],
+    "dependencies": [
+      "HW-001"
+    ],
+    "status": "Installed",
+    "notes": "Installed; preserve all current functionality. Coexistence is a go/no-go."
+  },
+  {
+    "id": "HW-003",
+    "name": "HELIX DSP",
+    "manufacturer": "Audiotec Fischer",
+    "model": "Previously identified as V TWELVE DSP MK2; physical label not confirmed",
+    "category": "Audio",
+    "purpose": "Existing DSP/amplifier, analog Tesla audio and candidate optical mixing",
+    "requiredQty": 1,
+    "ownedQty": 1,
+    "compatibility": "Requires physical test",
+    "supplier": "",
+    "url": "https://www.audiotec-fischer.de/en/helix/amplifiers/v-twelve-dsp-mk2",
+    "priceEur": null,
+    "priceVerified": "",
+    "alternatives": [],
+    "dependencies": [],
+    "status": "Installed",
+    "notes": "Confirm exact model/revision/firmware, inputs, outputs, preset backup and routing."
+  },
+  {
+    "id": "HW-004",
+    "name": "Raspberry Pi 4",
+    "manufacturer": "Raspberry Pi Ltd",
+    "model": "Exact RAM/revision unknown",
+    "category": "Compute",
+    "purpose": "Offline telemetry decode and deterministic synthesis",
+    "requiredQty": 1,
+    "ownedQty": 1,
+    "compatibility": "Partially verified",
+    "supplier": "",
+    "url": "https://www.raspberrypi.com/products/raspberry-pi-4-model-b/",
+    "priceEur": null,
+    "priceVerified": "",
+    "alternatives": [
+      "Raspberry Pi 3B+ for lower-complexity bench comparison"
+    ],
+    "dependencies": [],
+    "status": "Received",
+    "notes": "Available. Identify board revision and memory; not automotive-qualified."
+  },
+  {
+    "id": "HW-005",
+    "name": "HiFiBerry Digi2 Pro",
+    "manufacturer": "HiFiBerry",
+    "model": "Revision 2.2 candidate",
+    "category": "Audio",
+    "purpose": "Pi I2S-to-optical S/PDIF output",
+    "requiredQty": 1,
+    "ownedQty": 0,
+    "compatibility": "Requires physical test",
+    "supplier": "HiFiBerry",
+    "url": "https://www.hifiberry.com/shop/boards/digi2-pro/",
+    "priceEur": null,
+    "priceVerified": "",
+    "alternatives": [
+      "Other Pi 40-pin I2S optical S/PDIF HAT after compatibility review"
+    ],
+    "dependencies": [
+      "HW-004",
+      "HW-003"
+    ],
+    "status": "Researching",
+    "notes": "Do not buy until Pi PCB revision and HELIX digital mixing are confirmed. Price not verified."
+  },
+  {
+    "id": "HW-006",
+    "name": "HELIX DIRECTOR",
+    "manufacturer": "Audiotec Fischer",
+    "model": "Ownership/version unconfirmed",
+    "category": "Control",
+    "purpose": "Potential independent digital source volume and preset control",
+    "requiredQty": 1,
+    "ownedQty": 0,
+    "compatibility": "Requires physical test",
+    "supplier": "",
+    "url": "https://www.audiotec-fischer.de/en/knowledge-base/DIRECTOR/functions/",
+    "priceEur": null,
+    "priceVerified": "",
+    "alternatives": [
+      "HELIX CONDUCTOR or configured DSP-side digital volume control"
+    ],
+    "dependencies": [
+      "HW-003"
+    ],
+    "status": "Researching",
+    "notes": "Do not assume owned. DIRECTOR digital volume does not send arbitrary commands to Pi."
+  },
+  {
+    "id": "HW-007",
+    "name": "Automotive protected 12 V to 5 V supply",
+    "manufacturer": "TBD",
+    "model": "TBD after vehicle power verification",
+    "category": "Power",
+    "purpose": "Transient-protected Pi power and controlled shutdown",
+    "requiredQty": 1,
+    "ownedQty": 0,
+    "compatibility": "Hypothesis",
+    "supplier": "",
+    "url": "",
+    "priceEur": null,
+    "priceVerified": "",
+    "alternatives": [],
+    "dependencies": [
+      "HW-004"
+    ],
+    "status": "Blocked",
+    "notes": "Highland low-voltage architecture, wake/sleep behavior, fuse and converter requirements must be verified first."
+  },
+  {
+    "id": "HW-008",
+    "name": "MicroSD / endurance storage",
+    "manufacturer": "TBD",
+    "model": "Capacity/endurance TBD",
+    "category": "Compute",
+    "purpose": "OS and project state with corruption mitigation",
+    "requiredQty": 1,
+    "ownedQty": 0,
+    "compatibility": "Researching",
+    "supplier": "",
+    "url": "",
+    "priceEur": null,
+    "priceVerified": "",
+    "alternatives": [
+      "Read-only root filesystem with separate bounded data partition"
+    ],
+    "dependencies": [
+      "HW-004"
+    ],
+    "status": "Researching",
+    "notes": "Choose after OS, logging and power-loss strategy are defined."
+  }
 ]
