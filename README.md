@@ -5,7 +5,7 @@ An offline, real-time virtual engine sound research and engineering project for 
 ## Current status
 
 - **Project phase:** Phase 0 — Project preparation
-- **Overall status:** Feasibility research; physical verification remains open
+- **Overall status:** Feasibility research and synthetic-telemetry software bench prototype; physical verification remains open
 - **Known hardware:** S3XY Commander, S3XY Dash, HELIX DSP (model to confirm), Raspberry Pi 4 available; exact revisions/configuration not yet verified
 - **Not owned/confirmed:** S3XY Buttons are not owned; HELIX DIRECTOR ownership and version are unconfirmed
 - **Incomplete installation:** passenger-side woofer installation, independent tweeter wiring, final DSP tuning
@@ -35,6 +35,6 @@ Telemetry access must be passive/read-only. Never inject CAN messages or alter T
 
 - [`docs/`](docs/) — requirements, research, architecture, risks and commissioning
 - [`data/`](data/) — structured requirements, sources, findings, tasks, components and milestones
-- [`software/`](software/) — reserved for the later Raspberry Pi sound generator
+- [`software/`](software/) — offline synthetic-telemetry sound generator, WAV rendering, optional local playback and bench tests
 - [`web/`](web/) — portal source
 - [`CONTRIBUTING.md`](CONTRIBUTING.md) — change and evidence rules

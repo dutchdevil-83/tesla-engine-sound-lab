@@ -29,13 +29,15 @@ Prefer current official manuals/specifications. Every material finding needs a s
 - `docs/risks/`: risk register and open questions.
 - `data/*.json`: canonical portal data. Keep stable IDs and schema-compatible values.
 - `web/`: static React/TypeScript portal, no backend and no secret-bearing client integration.
-- `software/`: future Raspberry Pi software; do not imply production-ready code exists.
+- `software/`: synthetic-telemetry engine sound bench prototype. It is not vehicle-ready; do not imply Raspberry Pi, CAN, HELIX, or acoustic validation exists.
 
 Maintain `requirement → decision → implementation → test → evidence` traceability. No phase is complete without attached evidence. Browser localStorage is device/browser-local; export a backup before clearing browser data.
 
 ## Portal development
 
 From `web/`: `npm ci`, `npm run typecheck`, `npm run lint`, `npm test`, `npm run build`, `npm run validate`. Use accessible semantic HTML, keyboard-operable controls, responsive layouts and explicit empty/error states. Add tests for data validation and progress import/export. Internal links must resolve. Do not mark example content as completed project work.
+
+From `software/`: `python -m unittest discover -s tests -v`, `python -m engine_sound_lab profiles`, and `python -m engine_sound_lab benchmark`. WAV rendering and optional local playback are documented in `software/README.md`. Python/PortAudio callback allocation is a bench-only limitation; benchmark results do not establish vehicle latency.
 
 ## Deployment and contribution
 
