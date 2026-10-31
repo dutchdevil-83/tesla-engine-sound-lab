@@ -30,3 +30,17 @@ From `software/`, run `python -m unittest discover -s tests -v`, then `python -m
 
 - [Python `wave` module](https://docs.python.org/3/library/wave.html), checked 2026-10-31.
 - [python-sounddevice raw stream API](https://python-sounddevice.readthedocs.io/en/latest/api/raw-streams.html), checked 2026-10-31. Actual output device configuration is not yet verified.
+
+## Desktop measurement — 2026-10-31
+
+On the user's Windows desktop with Python 3.14.10, 12 unit tests passed and a 12-second WAV was rendered successfully. The optional `sounddevice` 0.5.6 package and PortAudio loaded, and output devices were enumerated; **no audible playback test was performed**.
+
+Four synthesis-only measurements each processed 200 consecutive 256-frame blocks (5.333 ms per block). The first run exceeded that period for 13 blocks. Three subsequent runs recorded:
+
+| Run | Median | p95 | Maximum | Blocks over 5.333 ms |
+|---|---:|---:|---:|---:|
+| 1 | 0.409 ms | 0.867 ms | 4.269 ms | 0 |
+| 2 | 0.543 ms | 4.079 ms | 22.817 ms | 9 |
+| 3 | 0.709 ms | 7.131 ms | 16.233 ms | 19 |
+
+These are wall-clock measurements under uncontrolled desktop load and include operating-system scheduling. They are not PortAudio callback underrun measurements and do not demonstrate Raspberry Pi performance or end-to-end latency. The variability and missed block periods prevent treating this Python implementation as a validated real-time engine. Repeated paced playback tests, scheduling analysis and an optimized implementation are outstanding.
