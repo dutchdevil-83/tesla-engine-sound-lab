@@ -2,7 +2,7 @@
 
 The first software phase generates original procedural engine sounds from **synthetic telemetry only**. It can render a WAV file, benchmark synthesis blocks, or play the simulation on a local PortAudio output. There is no CAN, network, Tesla, Commander, DSP control or vehicle integration in this phase.
 
-The output is a design prototype: profiles and virtual gearing are fictional sound-design parameters, not verified engine simulations. Python and the callback allocate memory; this is **not yet a hard-real-time or automotive-qualified implementation**. Pi performance, ALSA/optical compatibility, underruns, and accelerator-to-speaker latency remain unmeasured.
+The output is a design prototype: profiles and virtual gearing are fictional sound-design parameters, not verified engine simulations. The lower-allocation callback still executes Python and can allocate bookkeeping objects; this is **not yet a hard-real-time or automotive-qualified implementation**. Pi performance, ALSA/optical compatibility, underruns, and accelerator-to-speaker latency remain unmeasured.
 
 ## Requirements
 
@@ -58,7 +58,25 @@ Use `--device "device name"` with `play` to choose a listed output. No sound wil
 }
 ```
 
-The benchmark reports block synthesis time and missed 256-frame computation periods on the current computer. It excludes telemetry acquisition, operating-system scheduling, audio buffers, S/PDIF, HELIX processing and the speaker. It is **not** an end-to-end latency measurement.
+The default benchmark reports consecutive block synthesis time and missed 256-frame computation periods on the current computer. It excludes telemetry acquisition, operating-system scheduling, audio buffers, S/PDIF, HELIX processing and the speaker. It is **not** an end-to-end latency measurement.
+
+## Lower-allocation callback and repeatable timing (issue #13)
+
+`EngineSynth.render_into()` fills a reusable byte buffer directly; `render()` remains available. Playback creates synthetic telemetry outside the PortAudio callback and captures bounded processing times, callback intervals and PortAudio `output_underflows` status flags. Callback error silence is preallocated. Invalid/stale input still fades to silence. **Python remains non-real-time.**
+
+Run a paced simulation with no audio device and compare against the pinned phase-1 implementation without resetting or modifying your checkout:
+
+```powershell
+& {
+    Set-Location -LiteralPath 'X:\dev\repos\personal\tesla-engine-sound-lab\software'
+    py -3 -m engine_sound_lab benchmark --profile i5_turbo --paced --blocks 200 --warmup 50 --runs 4
+    if ($LASTEXITCODE -ne 0) { throw 'Paced timing benchmark failed.' }
+    py -3 tools/compare_synthesis.py --profiles i5_turbo v12 --paced --runs 4 --output 'D:\Downloads\Tesla-Issue13-Paced.json'
+    if ($LASTEXITCODE -ne 0) { throw 'Baseline comparison failed.' }
+}
+```
+
+`paced_deadline_misses` are **not** actual audio underruns. Real `output_underflows` require a PortAudio device playback test. A 12-second, low-volume Windows DirectSound headphone callback test was performed: 2,290 callbacks, 0 reported output underflows, 0 callback errors; listening confirmation is still pending. See [Windows audio evidence](../docs/testing/bench-phase-2-windows-audio-20261031.md). Raspberry Pi performance remains unverified. See [phase-2 synthesis evidence](../docs/testing/bench-phase-2.md) and [Pi 4 image and setup](../docs/testing/pi4-bench-image-and-audio-setup.md) for the remaining test gates.
 
 ## Safety behavior and limits
 
@@ -69,4 +87,4 @@ The benchmark reports block synthesis time and missed 256-frame computation peri
 
 Profiles: `i5_turbo`, `inline_six`, `v8_na`, `v8_turbo`, `v12`. Parameters are in [`engine_sound_lab/profiles.py`](engine_sound_lab/profiles.py). No recordings or third-party engine sound assets are included.
 
-See [bench-phase-1.md](../docs/testing/bench-phase-1.md) and [issue #7](https://github.com/dutchdevil-83/tesla-engine-sound-lab/issues/7) for evidence and remaining work.
+See [bench-phase-1.md](../docs/testing/bench-phase-1.md), [bench-phase-2.md](../docs/testing/bench-phase-2.md), [Pi 4 bench setup](../docs/testing/pi4-bench-image-and-audio-setup.md), and [issue #13](https://github.com/dutchdevil-83/tesla-engine-sound-lab/issues/13) for evidence and remaining work.

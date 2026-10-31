@@ -6,7 +6,7 @@ import math
 import sys
 from pathlib import Path
 from .profiles import PROFILES
-from .runtime import benchmark, play_synthetic, render_wav
+from .runtime import benchmark, benchmark_paced, play_synthetic, render_wav
 
 
 def bounded_float(minimum: float, maximum: float):
@@ -35,6 +35,11 @@ def build_parser() -> argparse.ArgumentParser:
             command.add_argument("--output", type=Path, required=True, help="new WAV path; existing files are never overwritten")
         if name == "play":
             command.add_argument("--device", help="optional PortAudio output device name")
+        if name == "benchmark":
+            command.add_argument("--paced", action="store_true", help="pace callbacks using a monotonic clock (not a sound-device test)")
+            command.add_argument("--blocks", type=int, default=200, help="measured blocks per run (1-10000)")
+            command.add_argument("--warmup", type=int, default=50, help="unmeasured warm-up blocks for paced runs (0-5000)")
+            command.add_argument("--runs", type=int, default=1, help="independent repetitions (1-20)")
     return parser
 
 
@@ -50,8 +55,15 @@ def main(argv: list[str] | None = None) -> int:
             frames = render_wav(args.output, profile, args.seconds, args.volume)
             print(f"Wrote {frames} stereo frames at 48000 Hz to {args.output}")
         elif args.command == "benchmark":
-            print(json.dumps(benchmark(profile), indent=2))
-            print("Synthesis timing only; not accelerator-to-speaker latency.")
+            if not 1 <= args.runs <= 20:
+                raise ValueError("runs must be an integer between 1 and 20")
+            if args.paced and not 0 <= args.warmup <= 5000:
+                raise ValueError("warmup must be an integer between 0 and 5000")
+            results = [(benchmark_paced(profile, blocks=args.blocks, warmup_blocks=args.warmup)
+                        if args.paced else benchmark(profile, blocks=args.blocks))
+                       for _ in range(args.runs)]
+            print(json.dumps(results[0] if args.runs == 1 else results, indent=2))
+            print("Synthetic timing only; paced deadline misses are not PortAudio underflows or end-to-end latency.")
         else:
             print("Synthetic audio will play on the selected local output. Start with the output volume low.")
             print(json.dumps(play_synthetic(profile, args.seconds, args.volume, args.device)))

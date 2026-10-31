@@ -127,7 +127,7 @@ class SynthTests(unittest.TestCase):
             def __exit__(self, *_):
                 return False
         fake = SimpleNamespace(RawOutputStream=FakeStream, CallbackStop=CallbackStop)
-        with patch.dict(sys.modules, {"sounddevice": fake}), patch("engine_sound_lab.runtime.time.monotonic", side_effect=[10.0, 11.1, 11.2]):
+        with patch.dict(sys.modules, {"sounddevice": fake}), patch("engine_sound_lab.runtime.time.monotonic", side_effect=[10.0, 10.0, 11.1, 11.2]):
             stats = play_synthetic(PROFILES["i5_turbo"], 1, .18)
         self.assertEqual(stats["callbacks"], 2)
         self.assertEqual(stats["callback_errors"], 0)
@@ -150,7 +150,7 @@ class SynthTests(unittest.TestCase):
             def __exit__(self, *_):
                 return False
         fake = SimpleNamespace(RawOutputStream=FakeStream, CallbackStop=CallbackStop)
-        with patch.dict(sys.modules, {"sounddevice": fake}), patch.object(EngineSynth, "render", side_effect=RuntimeError("test")):
+        with patch.dict(sys.modules, {"sounddevice": fake}), patch.object(EngineSynth, "render_into", side_effect=RuntimeError("test")):
             with self.assertRaisesRegex(RuntimeError, "silenced"):
                 play_synthetic(PROFILES["i5_turbo"], 1, .18)
         self.assertEqual(observed, [bytes(1024)])
