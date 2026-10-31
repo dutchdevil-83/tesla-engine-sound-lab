@@ -6,3 +6,7 @@
 @media(max-width:760px){.backup-actions{width:100%}.backup-actions .button{flex:1;justify-content:center}}
 
 .bom-status{display:inline-flex;align-items:center;gap:6px;color:#9ba9ba;font-size:10px}.bom-status select{border:1px solid #354255;background:#1a2432;color:#dbe7f7;border-radius:5px;padding:5px;font-size:10px}
+
+.bom-edit{margin:10px 0;color:#a7b8cb;font-size:10px}.bom-edit summary{cursor:pointer;color:#8ebaff}.bom-fields{display:flex;flex-wrap:wrap;gap:9px;margin-top:10px}.bom-fields label{display:grid;gap:4px;flex:1;min-width:110px}.bom-fields input{width:100%;background:#101721;border:1px solid #344052;border-radius:5px;padding:6px;color:#e9edf4;font-size:10px}.bom-edit p{color:#93a0b0}
+
+.category-totals{display:flex;flex-wrap:wrap;gap:8px;color:#a9b9cc;font-size:10px}.category-totals span{border:1px solid #354255;border-radius:5px;padding:6px 8px}

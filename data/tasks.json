@@ -232,5 +232,506 @@
     "evidence": [],
     "issue": "https://github.com/dutchdevil-83/tesla-engine-sound-lab/issues/8",
     "notes": "Target is an engineering goal, not a guaranteed component property."
+  },
+  {
+    "id": "T-009",
+    "title": "DSP 01 — Record vehicle speaker inventory and installed drivers",
+    "phase": "PH4",
+    "status": "blocked",
+    "description": "Record vehicle speaker inventory and installed drivers.",
+    "prerequisites": [
+      "T-001"
+    ],
+    "hardware": [
+      "HW-003"
+    ],
+    "steps": [
+      "Record vehicle speaker inventory and installed drivers."
+    ],
+    "expected": "Record the verified result and supporting measurement or backup reference.",
+    "safety": "Physical work and live DSP changes require separate authorization and qualified installation. Preserve Tesla warning audio and protect speakers; do not guess settings.",
+    "acceptance": [
+      "Step completed by a qualified person where applicable",
+      "Measured values and evidence recorded; no guessed settings"
+    ],
+    "evidence": [],
+    "issue": "https://github.com/dutchdevil-83/tesla-engine-sound-lab/issues/12",
+    "notes": ""
+  },
+  {
+    "id": "T-010",
+    "title": "DSP 02 — Install the remaining passenger-side woofer (separate authorization/installer work)",
+    "phase": "PH4",
+    "status": "blocked",
+    "description": "Install the remaining passenger-side woofer (separate authorization/installer work).",
+    "prerequisites": [
+      "T-009"
+    ],
+    "hardware": [
+      "HW-003"
+    ],
+    "steps": [
+      "Install the remaining passenger-side woofer (separate authorization/installer work)."
+    ],
+    "expected": "Record the verified result and supporting measurement or backup reference.",
+    "safety": "Physical work and live DSP changes require separate authorization and qualified installation. Preserve Tesla warning audio and protect speakers; do not guess settings.",
+    "acceptance": [
+      "Step completed by a qualified person where applicable",
+      "Measured values and evidence recorded; no guessed settings"
+    ],
+    "evidence": [],
+    "issue": "https://github.com/dutchdevil-83/tesla-engine-sound-lab/issues/12",
+    "notes": ""
+  },
+  {
+    "id": "T-011",
+    "title": "DSP 03 — Separate tweeter wiring for independent DSP channels; confirm wiring before amplifier enable",
+    "phase": "PH4",
+    "status": "blocked",
+    "description": "Separate tweeter wiring for independent DSP channels; confirm wiring before amplifier enable.",
+    "prerequisites": [
+      "T-010"
+    ],
+    "hardware": [
+      "HW-003"
+    ],
+    "steps": [
+      "Separate tweeter wiring for independent DSP channels; confirm wiring before amplifier enable."
+    ],
+    "expected": "Record the verified result and supporting measurement or backup reference.",
+    "safety": "Physical work and live DSP changes require separate authorization and qualified installation. Preserve Tesla warning audio and protect speakers; do not guess settings.",
+    "acceptance": [
+      "Step completed by a qualified person where applicable",
+      "Measured values and evidence recorded; no guessed settings"
+    ],
+    "evidence": [],
+    "issue": "https://github.com/dutchdevil-83/tesla-engine-sound-lab/issues/12",
+    "notes": ""
+  },
+  {
+    "id": "T-012",
+    "title": "DSP 04 — Inventory every physical HELIX input/output and identify connected vehicle signals",
+    "phase": "PH5",
+    "status": "blocked",
+    "description": "Inventory every physical HELIX input/output and identify connected vehicle signals.",
+    "prerequisites": [
+      "T-011"
+    ],
+    "hardware": [
+      "HW-003"
+    ],
+    "steps": [
+      "Inventory every physical HELIX input/output and identify connected vehicle signals."
+    ],
+    "expected": "Record the verified result and supporting measurement or backup reference.",
+    "safety": "Physical work and live DSP changes require separate authorization and qualified installation. Preserve Tesla warning audio and protect speakers; do not guess settings.",
+    "acceptance": [
+      "Step completed by a qualified person where applicable",
+      "Measured values and evidence recorded; no guessed settings"
+    ],
+    "evidence": [],
+    "issue": "https://github.com/dutchdevil-83/tesla-engine-sound-lab/issues/12",
+    "notes": ""
+  },
+  {
+    "id": "T-013",
+    "title": "DSP 05 — Export and checksum current DSP PC-Tool configuration; confirm restore procedure",
+    "phase": "PH5",
+    "status": "blocked",
+    "description": "Export and checksum current DSP PC-Tool configuration; confirm restore procedure.",
+    "prerequisites": [
+      "T-012"
+    ],
+    "hardware": [
+      "HW-003"
+    ],
+    "steps": [
+      "Export and checksum current DSP PC-Tool configuration; confirm restore procedure."
+    ],
+    "expected": "Record the verified result and supporting measurement or backup reference.",
+    "safety": "Physical work and live DSP changes require separate authorization and qualified installation. Preserve Tesla warning audio and protect speakers; do not guess settings.",
+    "acceptance": [
+      "Step completed by a qualified person where applicable",
+      "Measured values and evidence recorded; no guessed settings"
+    ],
+    "evidence": [],
+    "issue": "https://github.com/dutchdevil-83/tesla-engine-sound-lab/issues/12",
+    "notes": ""
+  },
+  {
+    "id": "T-014",
+    "title": "DSP 06 — Verify electrical connections, polarity labels and amplifier channel connections with power isolated by installer procedure",
+    "phase": "PH5",
+    "status": "blocked",
+    "description": "Verify electrical connections, polarity labels and amplifier channel connections with power isolated by installer procedure.",
+    "prerequisites": [
+      "T-013"
+    ],
+    "hardware": [
+      "HW-003"
+    ],
+    "steps": [
+      "Verify electrical connections, polarity labels and amplifier channel connections with power isolated by installer procedure."
+    ],
+    "expected": "Record the verified result and supporting measurement or backup reference.",
+    "safety": "Physical work and live DSP changes require separate authorization and qualified installation. Preserve Tesla warning audio and protect speakers; do not guess settings.",
+    "acceptance": [
+      "Step completed by a qualified person where applicable",
+      "Measured values and evidence recorded; no guessed settings"
+    ],
+    "evidence": [],
+    "issue": "https://github.com/dutchdevil-83/tesla-engine-sound-lab/issues/12",
+    "notes": ""
+  },
+  {
+    "id": "T-015",
+    "title": "DSP 07 — Record input sensitivity and gains from measurement; do not infer values",
+    "phase": "PH5",
+    "status": "blocked",
+    "description": "Record input sensitivity and gains from measurement; do not infer values.",
+    "prerequisites": [
+      "T-014"
+    ],
+    "hardware": [
+      "HW-003"
+    ],
+    "steps": [
+      "Record input sensitivity and gains from measurement; do not infer values."
+    ],
+    "expected": "Record the verified result and supporting measurement or backup reference.",
+    "safety": "Physical work and live DSP changes require separate authorization and qualified installation. Preserve Tesla warning audio and protect speakers; do not guess settings.",
+    "acceptance": [
+      "Step completed by a qualified person where applicable",
+      "Measured values and evidence recorded; no guessed settings"
+    ],
+    "evidence": [],
+    "issue": "https://github.com/dutchdevil-83/tesla-engine-sound-lab/issues/12",
+    "notes": ""
+  },
+  {
+    "id": "T-016",
+    "title": "DSP 08 — Configure speaker-specific high/low-pass filters only from manufacturer data and acoustic measurement",
+    "phase": "PH5",
+    "status": "blocked",
+    "description": "Configure speaker-specific high/low-pass filters only from manufacturer data and acoustic measurement.",
+    "prerequisites": [
+      "T-015"
+    ],
+    "hardware": [
+      "HW-003"
+    ],
+    "steps": [
+      "Configure speaker-specific high/low-pass filters only from manufacturer data and acoustic measurement."
+    ],
+    "expected": "Record the verified result and supporting measurement or backup reference.",
+    "safety": "Physical work and live DSP changes require separate authorization and qualified installation. Preserve Tesla warning audio and protect speakers; do not guess settings.",
+    "acceptance": [
+      "Step completed by a qualified person where applicable",
+      "Measured values and evidence recorded; no guessed settings"
+    ],
+    "evidence": [],
+    "issue": "https://github.com/dutchdevil-83/tesla-engine-sound-lab/issues/12",
+    "notes": ""
+  },
+  {
+    "id": "T-017",
+    "title": "DSP 09 — Protect tweeters with validated high-pass before enabling their amplifier channels",
+    "phase": "PH5",
+    "status": "blocked",
+    "description": "Protect tweeters with validated high-pass before enabling their amplifier channels.",
+    "prerequisites": [
+      "T-016"
+    ],
+    "hardware": [
+      "HW-003"
+    ],
+    "steps": [
+      "Protect tweeters with validated high-pass before enabling their amplifier channels."
+    ],
+    "expected": "Record the verified result and supporting measurement or backup reference.",
+    "safety": "Physical work and live DSP changes require separate authorization and qualified installation. Preserve Tesla warning audio and protect speakers; do not guess settings.",
+    "acceptance": [
+      "Step completed by a qualified person where applicable",
+      "Measured values and evidence recorded; no guessed settings"
+    ],
+    "evidence": [],
+    "issue": "https://github.com/dutchdevil-83/tesla-engine-sound-lab/issues/12",
+    "notes": ""
+  },
+  {
+    "id": "T-018",
+    "title": "DSP 10 — Configure and verify original Tesla input routing",
+    "phase": "PH5",
+    "status": "blocked",
+    "description": "Configure and verify original Tesla input routing.",
+    "prerequisites": [
+      "T-017"
+    ],
+    "hardware": [
+      "HW-003"
+    ],
+    "steps": [
+      "Configure and verify original Tesla input routing."
+    ],
+    "expected": "Record the verified result and supporting measurement or backup reference.",
+    "safety": "Physical work and live DSP changes require separate authorization and qualified installation. Preserve Tesla warning audio and protect speakers; do not guess settings.",
+    "acceptance": [
+      "Step completed by a qualified person where applicable",
+      "Measured values and evidence recorded; no guessed settings"
+    ],
+    "evidence": [],
+    "issue": "https://github.com/dutchdevil-83/tesla-engine-sound-lab/issues/12",
+    "notes": ""
+  },
+  {
+    "id": "T-019",
+    "title": "DSP 11 — Add optical Pi input only after bench-safe signal limits and routing tests",
+    "phase": "PH5",
+    "status": "blocked",
+    "description": "Add optical Pi input only after bench-safe signal limits and routing tests.",
+    "prerequisites": [
+      "T-018",
+      "T-002"
+    ],
+    "hardware": [
+      "HW-003"
+    ],
+    "steps": [
+      "Add optical Pi input only after bench-safe signal limits and routing tests."
+    ],
+    "expected": "Record the verified result and supporting measurement or backup reference.",
+    "safety": "Physical work and live DSP changes require separate authorization and qualified installation. Preserve Tesla warning audio and protect speakers; do not guess settings.",
+    "acceptance": [
+      "Step completed by a qualified person where applicable",
+      "Measured values and evidence recorded; no guessed settings"
+    ],
+    "evidence": [],
+    "issue": "https://github.com/dutchdevil-83/tesla-engine-sound-lab/issues/12",
+    "notes": ""
+  },
+  {
+    "id": "T-020",
+    "title": "DSP 12 — Configure DIRECTOR digital source volume and safe startup level; verify model/firmware compatibility",
+    "phase": "PH5",
+    "status": "blocked",
+    "description": "Configure DIRECTOR digital source volume and safe startup level; verify model/firmware compatibility.",
+    "prerequisites": [
+      "T-019"
+    ],
+    "hardware": [
+      "HW-003"
+    ],
+    "steps": [
+      "Configure DIRECTOR digital source volume and safe startup level; verify model/firmware compatibility."
+    ],
+    "expected": "Record the verified result and supporting measurement or backup reference.",
+    "safety": "Physical work and live DSP changes require separate authorization and qualified installation. Preserve Tesla warning audio and protect speakers; do not guess settings.",
+    "acceptance": [
+      "Step completed by a qualified person where applicable",
+      "Measured values and evidence recorded; no guessed settings"
+    ],
+    "evidence": [],
+    "issue": "https://github.com/dutchdevil-83/tesla-engine-sound-lab/issues/12",
+    "notes": ""
+  },
+  {
+    "id": "T-021",
+    "title": "DSP 13 — Verify Tesla warning and alert sounds are audible, unmodified and uninterrupted",
+    "phase": "PH5",
+    "status": "blocked",
+    "description": "Verify Tesla warning and alert sounds are audible, unmodified and uninterrupted.",
+    "prerequisites": [
+      "T-020"
+    ],
+    "hardware": [
+      "HW-003"
+    ],
+    "steps": [
+      "Verify Tesla warning and alert sounds are audible, unmodified and uninterrupted."
+    ],
+    "expected": "Record the verified result and supporting measurement or backup reference.",
+    "safety": "Physical work and live DSP changes require separate authorization and qualified installation. Preserve Tesla warning audio and protect speakers; do not guess settings.",
+    "acceptance": [
+      "Step completed by a qualified person where applicable",
+      "Measured values and evidence recorded; no guessed settings"
+    ],
+    "evidence": [],
+    "issue": "https://github.com/dutchdevil-83/tesla-engine-sound-lab/issues/12",
+    "notes": ""
+  },
+  {
+    "id": "T-022",
+    "title": "DSP 14 — Measure speaker polarity and phase",
+    "phase": "PH7",
+    "status": "blocked",
+    "description": "Measure speaker polarity and phase.",
+    "prerequisites": [
+      "T-021"
+    ],
+    "hardware": [
+      "HW-003"
+    ],
+    "steps": [
+      "Measure speaker polarity and phase."
+    ],
+    "expected": "Record the verified result and supporting measurement or backup reference.",
+    "safety": "Physical work and live DSP changes require separate authorization and qualified installation. Preserve Tesla warning audio and protect speakers; do not guess settings.",
+    "acceptance": [
+      "Step completed by a qualified person where applicable",
+      "Measured values and evidence recorded; no guessed settings"
+    ],
+    "evidence": [],
+    "issue": "https://github.com/dutchdevil-83/tesla-engine-sound-lab/issues/12",
+    "notes": ""
+  },
+  {
+    "id": "T-023",
+    "title": "DSP 15 — Measure and configure time alignment",
+    "phase": "PH7",
+    "status": "blocked",
+    "description": "Measure and configure time alignment.",
+    "prerequisites": [
+      "T-022"
+    ],
+    "hardware": [
+      "HW-003"
+    ],
+    "steps": [
+      "Measure and configure time alignment."
+    ],
+    "expected": "Record the verified result and supporting measurement or backup reference.",
+    "safety": "Physical work and live DSP changes require separate authorization and qualified installation. Preserve Tesla warning audio and protect speakers; do not guess settings.",
+    "acceptance": [
+      "Step completed by a qualified person where applicable",
+      "Measured values and evidence recorded; no guessed settings"
+    ],
+    "evidence": [],
+    "issue": "https://github.com/dutchdevil-83/tesla-engine-sound-lab/issues/12",
+    "notes": ""
+  },
+  {
+    "id": "T-024",
+    "title": "DSP 16 — Perform acoustic measurements at documented seat/microphone positions",
+    "phase": "PH7",
+    "status": "blocked",
+    "description": "Perform acoustic measurements at documented seat/microphone positions.",
+    "prerequisites": [
+      "T-023"
+    ],
+    "hardware": [
+      "HW-003"
+    ],
+    "steps": [
+      "Perform acoustic measurements at documented seat/microphone positions."
+    ],
+    "expected": "Record the verified result and supporting measurement or backup reference.",
+    "safety": "Physical work and live DSP changes require separate authorization and qualified installation. Preserve Tesla warning audio and protect speakers; do not guess settings.",
+    "acceptance": [
+      "Step completed by a qualified person where applicable",
+      "Measured values and evidence recorded; no guessed settings"
+    ],
+    "evidence": [],
+    "issue": "https://github.com/dutchdevil-83/tesla-engine-sound-lab/issues/12",
+    "notes": ""
+  },
+  {
+    "id": "T-025",
+    "title": "DSP 17 — Apply EQ based on recorded measurements and agreed target curve",
+    "phase": "PH7",
+    "status": "blocked",
+    "description": "Apply EQ based on recorded measurements and agreed target curve.",
+    "prerequisites": [
+      "T-024"
+    ],
+    "hardware": [
+      "HW-003"
+    ],
+    "steps": [
+      "Apply EQ based on recorded measurements and agreed target curve."
+    ],
+    "expected": "Record the verified result and supporting measurement or backup reference.",
+    "safety": "Physical work and live DSP changes require separate authorization and qualified installation. Preserve Tesla warning audio and protect speakers; do not guess settings.",
+    "acceptance": [
+      "Step completed by a qualified person where applicable",
+      "Measured values and evidence recorded; no guessed settings"
+    ],
+    "evidence": [],
+    "issue": "https://github.com/dutchdevil-83/tesla-engine-sound-lab/issues/12",
+    "notes": ""
+  },
+  {
+    "id": "T-026",
+    "title": "DSP 18 — Validate frequency response and speaker balance at safe levels",
+    "phase": "PH7",
+    "status": "blocked",
+    "description": "Validate frequency response and speaker balance at safe levels.",
+    "prerequisites": [
+      "T-025"
+    ],
+    "hardware": [
+      "HW-003"
+    ],
+    "steps": [
+      "Validate frequency response and speaker balance at safe levels."
+    ],
+    "expected": "Record the verified result and supporting measurement or backup reference.",
+    "safety": "Physical work and live DSP changes require separate authorization and qualified installation. Preserve Tesla warning audio and protect speakers; do not guess settings.",
+    "acceptance": [
+      "Step completed by a qualified person where applicable",
+      "Measured values and evidence recorded; no guessed settings"
+    ],
+    "evidence": [],
+    "issue": "https://github.com/dutchdevil-83/tesla-engine-sound-lab/issues/12",
+    "notes": ""
+  },
+  {
+    "id": "T-027",
+    "title": "DSP 19 — Verify simultaneous Tesla music and engine sound; test isolated digital mute",
+    "phase": "PH8",
+    "status": "blocked",
+    "description": "Verify simultaneous Tesla music and engine sound; test isolated digital mute.",
+    "prerequisites": [
+      "T-026"
+    ],
+    "hardware": [
+      "HW-003"
+    ],
+    "steps": [
+      "Verify simultaneous Tesla music and engine sound; test isolated digital mute."
+    ],
+    "expected": "Record the verified result and supporting measurement or backup reference.",
+    "safety": "Physical work and live DSP changes require separate authorization and qualified installation. Preserve Tesla warning audio and protect speakers; do not guess settings.",
+    "acceptance": [
+      "Step completed by a qualified person where applicable",
+      "Measured values and evidence recorded; no guessed settings"
+    ],
+    "evidence": [],
+    "issue": "https://github.com/dutchdevil-83/tesla-engine-sound-lab/issues/12",
+    "notes": ""
+  },
+  {
+    "id": "T-028",
+    "title": "DSP 20 — Export final DSP file, measurements, firmware/software versions and restoration steps",
+    "phase": "PH9",
+    "status": "blocked",
+    "description": "Export final DSP file, measurements, firmware/software versions and restoration steps.",
+    "prerequisites": [
+      "T-027"
+    ],
+    "hardware": [
+      "HW-003"
+    ],
+    "steps": [
+      "Export final DSP file, measurements, firmware/software versions and restoration steps."
+    ],
+    "expected": "Record the verified result and supporting measurement or backup reference.",
+    "safety": "Physical work and live DSP changes require separate authorization and qualified installation. Preserve Tesla warning audio and protect speakers; do not guess settings.",
+    "acceptance": [
+      "Step completed by a qualified person where applicable",
+      "Measured values and evidence recorded; no guessed settings"
+    ],
+    "evidence": [],
+    "issue": "https://github.com/dutchdevil-83/tesla-engine-sound-lab/issues/12",
+    "notes": ""
   }
 ]
