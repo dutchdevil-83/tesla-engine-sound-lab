@@ -1,0 +1,11 @@
+[
+ {"id":"REQ-AUD-001","text":"Tesla audio and engine sound play simultaneously without source interruption.","verification":"Bench and vehicle integration test","status":"Open"},
+ {"id":"REQ-CAN-001","text":"Vehicle telemetry access is passive/read-only; no CAN injection.","verification":"Architecture review and packet capture audit","status":"Design constraint"},
+ {"id":"REQ-S3XY-001","text":"Existing S3XY Dash remains fully functional.","verification":"Concurrent operation test across wake/reconnect cases","status":"Open"},
+ {"id":"REQ-DSP-001","text":"Digital engine source has independent volume and mute control.","verification":"HELIX routing and DIRECTOR test while analog audio continues","status":"Open"},
+ {"id":"REQ-SAF-001","text":"Loss, invalidity or staleness of telemetry fades engine audio safely to silence.","verification":"Fault injection using simulated telemetry","status":"Open"},
+ {"id":"REQ-LAT-001","text":"Accelerator-to-audio latency is measured; target <50 ms.","verification":"Common-clock end-to-end measurement","status":"Open"},
+ {"id":"REQ-OFF-001","text":"Production synthesis operates offline with no cloud inference.","verification":"Network-isolated runtime test","status":"Design constraint"},
+ {"id":"REQ-PWR-001","text":"Vehicle power delivery and shutdown do not create unsafe draw or storage corruption.","verification":"Installer review and wake/sleep/power-loss tests","status":"Open"},
+ {"id":"REQ-COM-001","text":"Commissioning can be repeated with traceable measured settings and backups.","verification":"Independent checklist execution and record review","status":"Open"}
+]

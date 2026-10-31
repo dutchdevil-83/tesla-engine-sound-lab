@@ -1,0 +1,16 @@
+[
+ {"name":"research","color":"1d76db","description":"Evidence-backed investigation"},
+ {"name":"hardware","color":"5319e7","description":"Hardware inventory or compatibility"},
+ {"name":"procurement","color":"f9d0c4","description":"Supplier and purchase planning; no purchase authorized by issue"},
+ {"name":"raspberry-pi","color":"7057ff","description":"Raspberry Pi platform or software"},
+ {"name":"can-telemetry","color":"0e8a16","description":"Read-only vehicle telemetry"},
+ {"name":"s3xy","color":"fbca04","description":"Enhance Auto S3XY integration"},
+ {"name":"helix-dsp","color":"d93f0b","description":"HELIX DSP or DIRECTOR"},
+ {"name":"audio-engine","color":"c2e0c6","description":"Synthesis and audio path"},
+ {"name":"installation","color":"b60205","description":"Physical installation; separate authorization required"},
+ {"name":"testing","color":"006b75","description":"Verification and acceptance tests"},
+ {"name":"documentation","color":"c5def5","description":"Engineering documentation"},
+ {"name":"blocked","color":"b60205","description":"Blocked by prerequisite or authorization"},
+ {"name":"needs-verification","color":"e4e669","description":"Evidence or physical verification required"},
+ {"name":"approval-required","color":"d876e3","description":"Requires separate human authorization"}
+]

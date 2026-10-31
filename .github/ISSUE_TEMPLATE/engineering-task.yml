@@ -1,0 +1,27 @@
+name: Engineering task
+description: Evidence-backed research, implementation or physical verification
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem and desired outcome
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Technical context and references
+  - type: textarea
+    id: dependencies
+    attributes:
+      label: Dependencies and required physical tests
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance criteria
+    validations:
+      required: true
+  - type: textarea
+    id: risks
+    attributes:
+      label: Risks and limitations

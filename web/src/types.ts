@@ -1,0 +1,4 @@
+export type Status = 'Verified' | 'Partially verified' | 'Hypothesis' | 'Requires physical test' | 'Rejected';
+export type Component = { id: string; name: string; manufacturer: string; model: string; category: string; purpose: string; requiredQty: number; ownedQty: number; compatibility: string; supplier: string; url: string; priceEur: number | null; priceVerified: string; alternatives: string[]; dependencies: string[]; status: string; notes: string };
+export type Task = { id: string; title: string; phase: string; status: string; description: string; prerequisites: string[]; hardware: string[]; steps: string[]; expected: string; safety: string; acceptance: string[]; evidence: string[]; issue: string | null; notes: string };
+export type Progress = { schemaVersion: 1; completedTaskIds: string[]; taskNotes: Record<string, string>; updatedAt: string };

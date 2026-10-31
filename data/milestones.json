@@ -1,0 +1,12 @@
+[
+ {"id":"PH0","name":"Phase 0 — Project preparation","exitCriteria":["Requirements, inventory, architecture hypothesis and risk register reviewed","Critical research sources recorded"]},
+ {"id":"PH1","name":"Phase 1 — Feasibility verification","exitCriteria":["Commander/Dash coexistence measured","HELIX simultaneous mixing and independent mute demonstrated","Vehicle power path verified from applicable service information"]},
+ {"id":"PH2","name":"Phase 2 — Component selection and procurement","exitCriteria":["BOM compatibility verified","Supplier and VAT-inclusive cost checked","Human purchase decisions recorded"]},
+ {"id":"PH3","name":"Phase 3 — Bench prototype","exitCriteria":["Simulated telemetry drives deterministic audio","48 kHz optical audio verified","Underrun and stale-data fail-silent tests pass"]},
+ {"id":"PH4","name":"Phase 4 — Vehicle preparation","exitCriteria":["Speaker work and wiring documented by qualified installer","Power and thermal installation reviewed"]},
+ {"id":"PH5","name":"Phase 5 — DSP base configuration","exitCriteria":["Original preset backed up","Speaker protection and routing measured and reviewed"]},
+ {"id":"PH6","name":"Phase 6 — System integration","exitCriteria":["Live read-only telemetry drives Pi","Digital engine contribution coexists with original audio"]},
+ {"id":"PH7","name":"Phase 7 — Acoustic calibration","exitCriteria":["Measured phase, timing, response and levels archived"]},
+ {"id":"PH8","name":"Phase 8 — Acceptance testing","exitCriteria":["Latency, failure behavior, coexistence, reliability and safe shutdown meet documented criteria"]},
+ {"id":"PH9","name":"Phase 9 — Maintenance","exitCriteria":["Recovery, update, backup and periodic inspection procedures established"]}
+]
